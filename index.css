@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+:root {
+  --primary-color: #011623;
+  --secondary-color: #182a35;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h3 {
+  color: #f9f9f9;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Creepster", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+  margin: 0;
+}
+
+header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+}
+
+.header__title {
+  color: rgba(7, 27, 82, 1);
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px 16px;
+  color: #f9f9f9;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.character {
+  width: 300px;
+  margin: 16px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid black;
+}
+
+.movie-img {
+  width: 100%;
+}
+
+img:hover {
+  transform: scale(1.03);
+  transition: all 300ms ease;
+}
+
+.movie-info {
+  color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 16px;
+  letter-spacing: 0.5px;
+}
+
+.overview {
+  color: #f9f9f9;
+  background-color: var(--secondary-color);
+  padding: 24px;
+  line-height: 32px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+.character:hover .overview {
+  transform: translateY(0);
+}
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+
+.movie-info span.red {
+  color: red;
+}
+
+.movie-info span.yellow {
+  color: yellow;
+}
+
+.loading__state {
+  font-size: 60px;
+  color: #f9f9f9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 1s linear infinite;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.character__loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: #7342d6;
+}
